@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styledeletar.css">
+        <title>Filmes</title>
+    </head>
+<body>
+        <%- include('./components/header.ejs') %>
+
+        <span><% if(message != ""){%>
+
+            <%- include('./components/alerts.ejs') %>
+            
+            <% } %> </span>
+        
+    <main>
+        <div class="container">
+
+            <form method="POST" action="/deletar/<%= filme.id %>">
+                
+                <div class="delecao">
+                    <h2>Dejesa realmente deletar?</h2>
+
+                    <span class="delecao"> <%= filme.nome %> </span>
+                </div>
+            
+                <div class="item">
+                    <img src="<%= filme.imagem %>" alt="capa do filme">
+                </div>
+
+                    <div class="cancel">
+                    <a href="/filmes/<%= filme.id %>" class="cancelar">Cancelar</a>
+                    </div>
+                    <button id="btnExcluir" type="submit">Confirmar Exclusão</button>
+            
+                
+            </form>
+        </div>
+    </main>
+        <%- include('./components/footer')%>
+
+    <script src="/js/script.js"></script> 
+
+</body>
+</html>

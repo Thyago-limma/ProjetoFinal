@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('./components/head.ejs') %>
+    
+<body>
+        <%- include('./components/header.ejs') %>
+
+        <% if(message != ""){%>
+
+            <%- include('./components/alerts.ejs') %>
+            
+            <% } %>
+        
+    <main>
+        <div class="container">
+
+            <% filmes.forEach(item => { %>
+                <div class="item">
+                    <h2><%= item.nome %></h2>
+                    <p><%= item.genero %></p>
+                    <a href="/filmes/<%= item.id %>"><img src="<%= item.imagem %>" alt="capa do filme"></a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    </main>
+    
+        <%- include('./components/footer')%>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

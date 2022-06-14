@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styledetalhes.css">
+    <title>Filmes</title>
+</head>   
+<body>
+        <%- include('./components/header.ejs') %>
+    <main>
+    
+        <section id="detalhes">
+
+            <h2>
+              <%= filme.nome %>
+            </h2>
+        
+            <p id="genero">
+              <%= filme.genero %>
+            </p>
+        
+            <div id="desc-content">
+        
+              <div id="desc-img">
+        
+                <img src="<%= filme.imagem %>" alt="Imagem do Filme">
+        
+              </div>
+        
+            <div id="desc-box">
+        
+                <p>
+                  <%= filme.diretor %>
+                </p>
+        
+            </div>
+        
+            <div id="ano">
+        
+                  <p>
+                    <%= filme.ano %>
+                  </p>
+        
+            </div>
+        
+            <div id="descricao">
+        
+                    <p>
+                        <%= filme.descricao %>
+                    </p>
+        
+                    
+            </div>
+              
+             <button><a href="/editar/<%= filme.id %>">Editar</a></button>
+             <button><a href="/deletar/<%= filme.id %>">Excluir</a></button>
+        
+            </div>
+        
+          </section>
+    </main>
+
+        <%- include('./components/footer')%>
+
+</body>
+</html>
